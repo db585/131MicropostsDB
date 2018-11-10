@@ -1,10 +1,8 @@
-const greeting = 'Hello World';
-console.log(greeting);
+// Using CommonJS modules
+// './mymodule01' means import module from the file which is in the same folder
+// 'express' means using module from node_modules
+// const person = require('./myModule01')
 
-const getData = async (url) => {
-  const response = await fetch(url);
-  const result = await response.json();
-  console.log(result);
-};
+// console.log(person.name)
 
-getData('https://jsonplaceholder.typicode.com/posts');
+// Using ES2015 modules
