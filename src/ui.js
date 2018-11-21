@@ -30,6 +30,46 @@ class UI {
 
     this.post.innerHTML = output
   }
+
+  showAlert (msg, classBootstrap) {
+    this.clearAlert()
+
+    // Create div
+    const divAlert = document.createElement('div')
+
+    // Add clases
+    divAlert.className = classBootstrap
+
+    // Add text
+    divAlert.appendChild(document.createTextNode(msg))
+
+    // Get parent
+    const container = document.querySelector('.postsContainer')
+
+    // Get posts
+    const posts = document.querySelector('#posts')
+
+    // Insert divAlert
+    container.insertBefore(divAlert, posts)
+
+    // Set timeout for alert
+    setTimeout(() => {
+      this.clearAlert()
+    },
+    3000)
+  }
+
+  clearAlert () {
+    const currentAlert = document.querySelector('.alert')
+    if (currentAlert) {
+      currentAlert.remove()
+    }
+  }
+
+  clearFields () {
+    this.titleInput.value = ''
+    this.bodyInput.value = ''
+  }
 }
 
 export const ui = new UI()
